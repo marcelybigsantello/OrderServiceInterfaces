@@ -1,0 +1,33 @@
+<form class="form">
+    <h2>Cadastro de novo Técnico</h2>
+    <mat-form-field class="full-width">
+        <mat-label>Nome: </mat-label>
+        <input [(ngModel)]="tecnico.nome" [formControl]="nome" required name="nome" maxlength="100" matInput placeholder="Ex. Linus Torvalds">
+        <mat-error *ngIf="nome.invalid">{{ errorValidName() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>CPF: </mat-label>
+        <input [(ngModel)]="tecnico.cpf" [formControl]="cpf" required name="cpf" maxlength="14" matInput placeholder="Ex. 000.000.000-00">
+        <mat-error *ngIf="cpf.invalid">{{ errorValidCPF() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone: </mat-label>
+        <input [(ngModel)]="tecnico.telefone" [formControl]="telefone" required name="telefone" maxlength="15" matInput placeholder="Ex. (11) 90000-0000">
+        <mat-error *ngIf="telefone.invalid">{{ errorValidTelefone() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Grau de Instrução (Escolaridade)</mat-label>
+        <mat-select [formControl]="grauInstrucao" required>
+            <mat-option *ngFor="let nivel of grausDeInstrucao" [value]="nivel">
+                {{nivel.description}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="grauInstrucao.hasError('required')"> {{ errorValidGrauInstrucao() }} </mat-error>
+    </mat-form-field>
+
+    <button (click)="create()" [disabled]="errorValidName() || errorValidCPF() || errorValidTelefone() || errorValidGrauInstrucao()" mat-flat-button class="criar" color="accent">CRIAR</button>
+    <button (click)="cancel()" mat-flat-button color="warn">CANCELAR</button>
+</form>

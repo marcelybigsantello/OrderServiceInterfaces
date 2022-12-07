@@ -1,0 +1,23 @@
+.form {
+    width: 50%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.criar {
+    background-color: rgb(6, 133, 6);
+    color: white;
+}
