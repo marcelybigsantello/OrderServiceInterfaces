@@ -21,17 +21,27 @@ export class TecnicosService {
     return this.http.get<Tecnico[]>(url);
   }
 
+  public findById(id: any): Observable<Tecnico> {
+    const url2 = `${this.baseUrl}/tecnicos/${id}`;
+
+    return this.http.get<Tecnico>(url2);
+  }
+
   public create(tecnico: Tecnico): Observable<Tecnico> {
     const url = this.baseUrl + "/tecnicos";
     return this.http.post<Tecnico>(url, tecnico);
   }
 
-  public generateMessage(msg: String): void {
-    this.snack.open(`${msg}`, 'OK', {
-      horizontalPosition: 'end',
-      verticalPosition: 'top', 
-      duration: 5000
-    })
+  public update(tecnico: Tecnico): Observable<Tecnico> {
+    const url = this.baseUrl + "/tecnicos/" + tecnico.id;
+    const url2 = `${this.baseUrl}/tecnicos/${tecnico.id}`;
+
+    return this.http.put<Tecnico>(url, tecnico);
+  }
+
+  public delete(tecnico: Tecnico): Observable<Tecnico> {
+    const url = this.baseUrl + "/tecnicos/" + tecnico.id;
+    return this.http.delete<Tecnico>(url);
   }
   
 }

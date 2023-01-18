@@ -1,0 +1,29 @@
+<form class="form">
+    <h2>Excluindo Técnico</h2>
+    <mat-form-field class="full-width">
+        <mat-label>Nome: </mat-label>
+        <input [(ngModel)]="tecnico.nome" name="nome" disabled maxlength="100" matInput placeholder="Ex. Linus Torvalds">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>CPF: </mat-label>
+        <input [(ngModel)]="tecnico.cpf" name="cpf" disabled maxlength="14" matInput placeholder="Ex. 000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone: </mat-label>
+        <input [(ngModel)]="tecnico.telefone" name="telefone" disabled maxlength="15" matInput placeholder="Ex. (11) 90000-0000">
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Grau de Instrução (Escolaridade)</mat-label>
+        <mat-select [formControl]="grauInstrucao" required>
+            <mat-option *ngFor="let nivel of grausDeInstrucao" aria-disabled="true" [value]="nivel">
+                {{ nivel.description }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>>-->
+
+    <button (click)="delete()" mat-flat-button class="criar" color="accent">EXCLUIR</button>
+    <button (click)="cancel()" mat-flat-button color="warn">CANCELAR</button>
+</form>

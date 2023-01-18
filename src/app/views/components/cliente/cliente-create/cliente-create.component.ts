@@ -1,55 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GrauInstrucao } from 'src/app/models/grau-instrucao';
-import { Tecnico } from 'src/app/models/tecnico';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/clientes.service';
 import { MessageService } from 'src/app/services/message.service';
-import { TecnicosService } from 'src/app/services/tecnicos.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrls: ['./cliente-create.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class ClienteCreateComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
     id: '',
     nome: '',
     cpf: '', 
-    telefone: '',
-    grauInstrucao: ''
+    telefone: ''
   }
 
   nome = new FormControl('', [Validators.minLength(5)]);
   cpf = new FormControl('', [Validators.minLength(11)]);
   telefone = new FormControl('', [Validators.minLength(11)]);
-  grauInstrucao = new FormControl<GrauInstrucao | null>(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
-  grausDeInstrucao: GrauInstrucao[] = [
-    {code: 1, description: 'Ensino Médio'},
-    {code: 2, description: 'Graduação'},
-    {code: 3, description: 'Pós Graduação'},
-    {code: 4, description: 'Mestrado'},
-    {code: 5, description: 'Doutorado'},
-  ];
 
   constructor(
-    private router : Router,
-    private tecnicoService: TecnicosService,
+    private router: Router,
+    private clienteService: ClienteService,
     private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
 
   public cancel(): void {
-    this.router.navigate(['tecnicos']);
+    this.router.navigate(['clientes']);
   }
 
   public create(): void {
-    this.tecnicoService.create(this.tecnico).subscribe((resposta) => {
-      this.router.navigate(['tecnicos']),
-      this.messageService.generateMessage('Técnico cadastrado com sucesso!')
+    this.clienteService.create(this.cliente).subscribe((resposta) => {
+      this.router.navigate(['clientes']),
+      this.messageService.generateMessage('Cliente cadastrado com sucesso!')
     }, err => {
       if (err.error.error.match('já cadastrado')) {
         this.messageService.generateMessage(err.error.error);
@@ -86,12 +76,4 @@ export class TecnicoCreateComponent implements OnInit {
     return false;
   }
 
-  public errorValidGrauInstrucao(): String | boolean {
-    if (this.grauInstrucao === null || this.grauInstrucao === undefined){
-      return 'Grau de Instrução não informado!';
-    }
-
-    return false;
-  }
- 
 }

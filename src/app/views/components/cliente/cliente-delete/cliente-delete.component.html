@@ -1,0 +1,20 @@
+<form class="form">
+    <h2>Excluindo Cliente</h2>
+    <mat-form-field class="full-width">
+        <mat-label>Nome: </mat-label>
+        <input [(ngModel)]="cliente.nome" name="nome" disabled maxlength="100" matInput placeholder="Ex. Linus Torvalds">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>CPF: </mat-label>
+        <input [(ngModel)]="cliente.cpf" name="cpf" disabled maxlength="14" matInput placeholder="Ex. 000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone: </mat-label>
+        <input [(ngModel)]="cliente.telefone" name="telefone" disabled maxlength="15" matInput placeholder="Ex. (11) 90000-0000">
+    </mat-form-field>
+
+    <button (click)="delete()" mat-flat-button class="criar" color="accent">EXCLUIR</button>
+    <button (click)="cancel()" mat-flat-button color="warn">CANCELAR</button>
+</form>
