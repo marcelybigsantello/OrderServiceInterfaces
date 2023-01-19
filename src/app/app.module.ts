@@ -32,6 +32,7 @@ import { ClienteCreateComponent } from './views/components/cliente/cliente-creat
 import { ClienteUpdateComponent } from './views/components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './views/components/cliente/cliente-delete/cliente-delete.component';
 import { SobreComponent } from './views/components/sobre/sobre.component';
+import { OrderServiceReadComponent } from './views/components/order-service/order-service-read/order-service-read.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SobreComponent } from './views/components/sobre/sobre.component';
     ClienteCreateComponent,
     ClienteUpdateComponent,
     ClienteDeleteComponent,
-    SobreComponent
+    SobreComponent,
+    OrderServiceReadComponent
   ],
   imports: [
     BrowserModule,
