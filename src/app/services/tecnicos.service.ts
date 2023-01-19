@@ -12,9 +12,7 @@ export class TecnicosService {
 
   baseUrl: String = environment.baseURL;
 
-  constructor(private http: HttpClient,
-    private snack: MatSnackBar
-    ) { }
+  constructor(private http: HttpClient) { }
 
   public findAll(): Observable<Tecnico[]>{
     const url = this.baseUrl + "/tecnicos";
