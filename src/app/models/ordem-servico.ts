@@ -1,6 +1,3 @@
-import { Cliente } from "./cliente";
-import { Tecnico } from "./tecnico";
-
 export interface OrdemServico {
     id?: any;
     dataAbertura?: Date;
@@ -8,7 +5,6 @@ export interface OrdemServico {
     prioridade: any;
     observacoes: String;
     status: any;
-    cliente: Cliente | number;
-    tecnico: Tecnico | number;
-
+    cliente: any;
+    tecnico: any;
 }
