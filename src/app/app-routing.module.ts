@@ -6,6 +6,7 @@ import { ClienteDeleteComponent } from './views/components/cliente/cliente-delet
 import { ClienteReadComponent } from './views/components/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './views/components/cliente/cliente-update/cliente-update.component';
 import { HomeComponent } from './views/components/home/home.component';
+import { OrderServiceCreateComponent } from './views/components/order-service/order-service-create/order-service-create.component';
 import { OrderServiceReadComponent } from './views/components/order-service/order-service-read/order-service-read.component';
 import { SobreComponent } from './views/components/sobre/sobre.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'clientes/update/:id', component: ClienteUpdateComponent },
   { path: 'clientes/delete/:id', component: ClienteDeleteComponent },
   { path: 'ordem-servico', component: OrderServiceReadComponent },
+  { path: 'ordem-servico/create', component: OrderServiceCreateComponent },
   { path: 'sobre', component: SobreComponent }
 ];
 
