@@ -3,6 +3,13 @@
     margin: auto;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 250%;
+}
+
 .fields {
     display: flex;
     justify-content: space-between;
@@ -14,7 +21,7 @@
 
 textarea {
     min-height: 4rem;
-    max-height: 15rem;
+    max-height: 10rem;
 }
 
 button {

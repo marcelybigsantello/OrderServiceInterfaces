@@ -1,23 +1,25 @@
 <div class="container">
 
+    <h1>Criando Ordem de Serviço</h1>
+
     <div class="fields">
         <mat-form-field appearance="fill">
             <mat-label>Selecione um Técnico</mat-label>
-            <mat-select [(value)]="selected">
-                <mat-option *ngFor="let tec of tecnicos" value="tec.id">{{ tec.nome }}</mat-option>
+            <mat-select [(value)]="ordemServico.tecnico">
+                <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Selecione um Cliente</mat-label>
-            <mat-select [(value)]="selected">
-                <mat-option *ngFor="let cliente of clientes" value="cliente.id">{{ cliente.nome }}</mat-option>
+            <mat-select [(value)]="ordemServico.cliente">
+                <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Selecione um Status</mat-label>
-            <mat-select [(value)]="selected">
+            <mat-select [(value)]="ordemServico.status">
                 <mat-option value="0">ABERTO</mat-option>
                 <mat-option value="1">EM ANDAMENTO</mat-option>
                 <mat-option value="2">ENCERRADO</mat-option>
@@ -26,7 +28,7 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Selecione uma Prioridade</mat-label>
-            <mat-select [(value)]="selected">
+            <mat-select [(value)]="ordemServico.prioridade">
                 <mat-option value="0">BAIXA</mat-option>
                 <mat-option value="1">MÉDIA</mat-option>
                 <mat-option value="2">ALTA</mat-option>
@@ -36,11 +38,13 @@
 
     <form class="form">
         <mat-form-field class="full-width">
-            <mat-label>Insira as observações da ordem de serviço: </mat-label>
-            <textarea matInput maxlength="255"></textarea>
+            <mat-label>
+                Insira as observações da ordem de serviço:
+            </mat-label>
+            <textarea [(ngModel)]="ordemServico.observacoes" name="observacoes" matInput maxlength="255"></textarea>
         </mat-form-field>
     </form>
 
-    <button class="mat-elevation-z8" mat-raised-button color="accent">CRIAR</button>
-    <button class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
+    <button (click)="create()" class="mat-elevation-z8" mat-raised-button color="accent">CRIAR</button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
 </div>
