@@ -63,4 +63,14 @@ export class OrderServiceReadComponent implements AfterViewInit {
     })
   }
 
+  public setarCorPrioridade(x: any): String {
+    if (x == 'BAIXA'){
+      return 'baixa';
+    }
+    if (x == 'MEDIA') {
+      return 'media';
+    }
+    return 'alta';
+  }
+
 }

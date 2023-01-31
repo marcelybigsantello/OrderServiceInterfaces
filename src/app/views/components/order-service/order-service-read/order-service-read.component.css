@@ -28,5 +28,20 @@ table {
 }
 
 #delete {
-    color: rgb(27, 117, 27);
+    color: rgb(24, 99, 24);
+}
+
+td.baixa {
+    color: rgb(1, 155, 1);
+    font-weight: bolder;
+}
+
+td.media {
+    color: rgb(214, 214, 57);
+    font-weight: bolder;
+}
+
+td.alta {
+    color: rgb(211, 8, 8);
+    font-weight: bolder;
 }
