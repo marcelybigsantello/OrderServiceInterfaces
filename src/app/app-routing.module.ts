@@ -7,8 +7,10 @@ import { ClienteReadComponent } from './views/components/cliente/cliente-read/cl
 import { ClienteUpdateComponent } from './views/components/cliente/cliente-update/cliente-update.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { OrderServiceCreateComponent } from './views/components/order-service/order-service-create/order-service-create.component';
+import { OrderServiceDeleteComponent } from './views/components/order-service/order-service-delete/order-service-delete.component';
 import { OrderServiceReadComponent } from './views/components/order-service/order-service-read/order-service-read.component';
 import { OrderServiceUpdateComponent } from './views/components/order-service/order-service-update/order-service-update.component';
+import { OrderServiceViewComponent } from './views/components/order-service/order-service-view/order-service-view.component';
 import { SobreComponent } from './views/components/sobre/sobre.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'ordem-servico', component: OrderServiceReadComponent },
   { path: 'ordem-servico/create', component: OrderServiceCreateComponent },
   { path: 'ordem-servico/update/:id', component: OrderServiceUpdateComponent },
+  { path: 'ordem-servico/delete/:id', component: OrderServiceDeleteComponent },
+  { path: 'ordem-servico/view/:id', component: OrderServiceViewComponent },
   { path: 'sobre', component: SobreComponent }
 ];
 

@@ -1,0 +1,50 @@
+<div class="container">
+
+    <h1>Exclusão de Ordem de Serviço</h1>
+
+    <div class="fields">
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Técnico</mat-label>
+            <mat-select [(value)]="ordemServico.tecnico" disabled>
+                <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Cliente</mat-label>
+            <mat-select [(value)]="ordemServico.cliente" disabled>
+                <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Status</mat-label>
+            <mat-select [(value)]="ordemServico.status" disabled>
+                <mat-option value="0">ABERTO</mat-option>
+                <mat-option value="1">EM ANDAMENTO</mat-option>
+                <mat-option value="2">ENCERRADO</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione uma Prioridade</mat-label>
+            <mat-select [(value)]="ordemServico.prioridade" disabled>
+                <mat-option value="0">BAIXA</mat-option>
+                <mat-option value="1">MÉDIA</mat-option>
+                <mat-option value="2">ALTA</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <form class="form">
+        <mat-form-field class="full-width">
+            <mat-label>
+                Insira as observações da ordem de serviço:
+            </mat-label>
+            <textarea [(ngModel)]="ordemServico.observacoes" name="observacoes" matInput maxlength="255" disabled></textarea>
+        </mat-form-field>
+    </form>
+
+    <button (click)="delete()" class="mat-elevation-z8" mat-raised-button color="accent">EXCLUIR</button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
+</div>

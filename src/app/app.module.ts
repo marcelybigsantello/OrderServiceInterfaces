@@ -35,6 +35,8 @@ import { SobreComponent } from './views/components/sobre/sobre.component';
 import { OrderServiceReadComponent } from './views/components/order-service/order-service-read/order-service-read.component';
 import { OrderServiceCreateComponent } from './views/components/order-service/order-service-create/order-service-create.component';
 import { OrderServiceUpdateComponent } from './views/components/order-service/order-service-update/order-service-update.component';
+import { OrderServiceDeleteComponent } from './views/components/order-service/order-service-delete/order-service-delete.component';
+import { OrderServiceViewComponent } from './views/components/order-service/order-service-view/order-service-view.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { OrderServiceUpdateComponent } from './views/components/order-service/or
     SobreComponent,
     OrderServiceReadComponent,
     OrderServiceCreateComponent,
-    OrderServiceUpdateComponent
+    OrderServiceUpdateComponent,
+    OrderServiceDeleteComponent,
+    OrderServiceViewComponent
   ],
   imports: [
     BrowserModule,
