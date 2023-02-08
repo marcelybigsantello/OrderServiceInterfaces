@@ -8,6 +8,7 @@ import { FooterComponent } from './views/components/template/footer/footer.compo
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
@@ -37,6 +39,7 @@ import { OrderServiceCreateComponent } from './views/components/order-service/or
 import { OrderServiceUpdateComponent } from './views/components/order-service/order-service-update/order-service-update.component';
 import { OrderServiceDeleteComponent } from './views/components/order-service/order-service-delete/order-service-delete.component';
 import { OrderServiceViewComponent } from './views/components/order-service/order-service-view/order-service-view.component';
+import { OrderServicesClosedComponent } from './views/components/order-service/order-services-closed/order-services-closed.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,8 @@ import { OrderServiceViewComponent } from './views/components/order-service/orde
     OrderServiceCreateComponent,
     OrderServiceUpdateComponent,
     OrderServiceDeleteComponent,
-    OrderServiceViewComponent
+    OrderServiceViewComponent,
+    OrderServicesClosedComponent
   ],
   imports: [
     BrowserModule,
@@ -81,8 +85,9 @@ import { OrderServiceViewComponent } from './views/components/order-service/orde
     MatInputModule,
     MatDatepickerModule,
     MatPaginatorModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    MatMenuModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

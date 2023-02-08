@@ -8,11 +8,11 @@ import { OrdemServicoService } from 'src/app/services/ordem-servico.service';
 import { TecnicosService } from 'src/app/services/tecnicos.service';
 
 @Component({
-  selector: 'app-order-service-read',
-  templateUrl: './order-service-read.component.html',
-  styleUrls: ['./order-service-read.component.css']
+  selector: 'app-order-services-closed',
+  templateUrl: './order-services-closed.component.html',
+  styleUrls: ['./order-services-closed.component.css']
 })
-export class OrderServiceReadComponent implements AfterViewInit {
+export class OrderServicesClosedComponent implements AfterViewInit {
 
   lista: OrdemServico[] = [];
 
@@ -36,7 +36,7 @@ export class OrderServiceReadComponent implements AfterViewInit {
   public findAll(): void {
     this.ordemServicoService.findAll().subscribe((resposta) => {
       resposta.forEach(x => {
-        if (x.status != "ENCERRADO"){
+        if (x.status == "ENCERRADO"){
           this.lista.push(x);
         }
       })
@@ -45,10 +45,6 @@ export class OrderServiceReadComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource<OrdemServico>(this.lista);
       this.dataSource.paginator = this.paginator;
     })
-  }
-
-  public navigateToCreate(): void {
-    this.router.navigate(['ordem-servico/create']);
   }
 
   public listarTecnico(): void {
@@ -78,3 +74,4 @@ export class OrderServiceReadComponent implements AfterViewInit {
   }
 
 }
+

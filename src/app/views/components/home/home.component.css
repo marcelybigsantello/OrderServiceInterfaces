@@ -1,8 +1,14 @@
-mat-card {
+mat-card-header {
     width: 90%;
     height: 50%;
-    position: relative;
-    padding: 5% auto 30% auto;
+    position: initial;
+    display: block;
+}
+
+img {
+    position: static;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .paragraph {

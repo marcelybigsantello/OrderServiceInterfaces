@@ -11,6 +11,7 @@ import { OrderServiceDeleteComponent } from './views/components/order-service/or
 import { OrderServiceReadComponent } from './views/components/order-service/order-service-read/order-service-read.component';
 import { OrderServiceUpdateComponent } from './views/components/order-service/order-service-update/order-service-update.component';
 import { OrderServiceViewComponent } from './views/components/order-service/order-service-view/order-service-view.component';
+import { OrderServicesClosedComponent } from './views/components/order-service/order-services-closed/order-services-closed.component';
 import { SobreComponent } from './views/components/sobre/sobre.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'ordem-servico/create', component: OrderServiceCreateComponent },
   { path: 'ordem-servico/update/:id', component: OrderServiceUpdateComponent },
   { path: 'ordem-servico/delete/:id', component: OrderServiceDeleteComponent },
-  { path: 'ordem-servico/view/:id', component: OrderServiceViewComponent },
+  { path: 'ordem-servico/view/:id', component: OrderServiceViewComponent }, 
+  { path: 'ordem-servico/closed', component: OrderServicesClosedComponent },
   { path: 'sobre', component: SobreComponent }
 ];
 
