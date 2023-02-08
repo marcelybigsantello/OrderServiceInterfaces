@@ -53,7 +53,6 @@ export class ClienteUpdateComponent implements OnInit {
       this.router.navigate(['clientes'])
       this.messageService.generateMessage('Cliente atualizado com sucesso');
     }, err => {
-      console.log(err);
       if (err.error.error.match('já cadastrado')){
         this.messageService.generateMessage(err.error.error);
       } else if (err.error.errors[0].message === errorMessageCPF){

@@ -55,7 +55,6 @@ export class TecnicoUpdateComponent implements OnInit {
       this.router.navigate(['tecnicos']);
       this.messageService.generateMessage('Técnico atualizado com sucesso!');
     }, err => {
-      console.log(err);
       if (err.error.error.match('já cadastrado')) {
         this.messageService.generateMessage(err.error.error);
       } else if (err.error.errors[0].message === errorMessageCPF) {

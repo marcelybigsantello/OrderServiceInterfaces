@@ -40,7 +40,7 @@ export class OrderServiceDeleteComponent implements OnInit {
       this.ordemServico = ret;
       this.messageService.generateMessage(exclusaoSucesso);
     }, err => {
-      console.log(err);
+      this.messageService.generateMessage(err.error.error);
     })
   }
 
