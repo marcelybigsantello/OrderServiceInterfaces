@@ -58,9 +58,6 @@ export class TecnicoCreateComponent implements OnInit {
       + "brasileiro (CPF) inválido"){
         this.messageService.generateMessage("CPF inválido");
       }
-      else {
-        console.log(err);
-      }
     })
   }
 
