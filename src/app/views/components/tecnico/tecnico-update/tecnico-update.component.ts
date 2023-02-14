@@ -36,7 +36,7 @@ export class TecnicoUpdateComponent implements OnInit {
     { code: 2, description: 'Graduação' },
     { code: 3, description: 'Pós Graduação' },
     { code: 4, description: 'Mestrado' },
-    { code: 5, description: 'Doutorado' }
+    { code: 5, description: 'Não informar' }
   ]
 
   constructor(private tecnicoService: TecnicosService,
@@ -96,12 +96,28 @@ export class TecnicoUpdateComponent implements OnInit {
     return false;
   }
 
-  public errorValidGrauInstrucao(): String | boolean {
-    if (this.grauInstrucao === null || this.grauInstrucao === undefined) {
-      return 'Grau de Instrução não informado!';
+  public setGrauInstrucao(description: String): void {
+    console.log(description)
+    if (description === "Ensino Médio"){
+      this.tecnico.grauInstrucao = "Ensino Médio";
     }
 
-    return false;
+    if (description === "Graduação") {
+      this.tecnico.grauInstrucao = "Graduação";
+    }
+
+    if (description === "Pós Graduação") {
+      this.tecnico.grauInstrucao = "Pós Graduação";
+    }
+
+    if (description === "Mestrado"){
+      this.tecnico.grauInstrucao = "Mestrado";
+    }
+    
+    if (description === 'Não informar') {
+      this.tecnico.grauInstrucao = "Não informar";
+    }
+
   }
 
 }

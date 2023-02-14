@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GrauInstrucao } from 'src/app/models/grau-instrucao';
 import { Tecnico } from 'src/app/models/tecnico';
 import { MessageService } from 'src/app/services/message.service';
 import { TecnicosService } from 'src/app/services/tecnicos.service';
@@ -23,6 +24,12 @@ export class TecnicoDeleteComponent implements OnInit {
   }
 
   id_tec = '';
+  grausDeInstrucao: GrauInstrucao[] = [
+    { code: 1, description: 'Ensino Médio' },
+    { code: 2, description: 'Graduação' },
+    { code: 3, description: 'Pós Graduação' },
+    { code: 4, description: 'Mestrado' }
+  ]
 
   constructor(private tecnicoService: TecnicosService,
     private router: Router,
@@ -54,6 +61,24 @@ export class TecnicoDeleteComponent implements OnInit {
 
   public cancel(): void {
     this.router.navigate(['tecnicos']);
+  }
+
+  public setGrauInstrucao(description: String): void {
+    if (description === "Ensino Médio"){
+      this.tecnico.grauInstrucao = "Ensino Médio";
+    }
+
+    if (description === "Graduação") {
+      this.tecnico.grauInstrucao = "Graduação";
+    }
+
+    if (description === "Pós Graduação") {
+      this.tecnico.grauInstrucao = "Pós Graduação";
+    }
+
+    if (description === "Mestrado"){
+      this.tecnico.grauInstrucao = "Mestrado";
+    }
   }
 
 }

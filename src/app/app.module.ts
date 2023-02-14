@@ -40,6 +40,8 @@ import { OrderServiceUpdateComponent } from './views/components/order-service/or
 import { OrderServiceDeleteComponent } from './views/components/order-service/order-service-delete/order-service-delete.component';
 import { OrderServiceViewComponent } from './views/components/order-service/order-service-view/order-service-view.component';
 import { OrderServicesClosedComponent } from './views/components/order-service/order-services-closed/order-services-closed.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { OrderServicesClosedComponent } from './views/components/order-service/o
     MatPaginatorModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCheckboxModule, 
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
