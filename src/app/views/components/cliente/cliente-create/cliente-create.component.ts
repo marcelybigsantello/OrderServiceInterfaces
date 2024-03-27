@@ -16,12 +16,16 @@ export class ClienteCreateComponent implements OnInit {
     id: '',
     nome: '',
     cpf: '', 
-    telefone: ''
+    telefone: '', 
+    dataNascimento: new Date(),
+    profissao: ''
   }
 
   nome = new FormControl('', [Validators.minLength(5)]);
   cpf = new FormControl('', [Validators.minLength(11)]);
   telefone = new FormControl('', [Validators.minLength(11)]);
+  dataNascimento = new FormControl('');
+  profissao = new FormControl('', [Validators.maxLength(30)]);
   selectFormControl = new FormControl('', Validators.required);
 
   constructor(
@@ -68,6 +72,14 @@ export class ClienteCreateComponent implements OnInit {
   public errorValidTelefone(): String | boolean {
     if (this.telefone.invalid){
       return 'O telefone deve ter entre 11 e 15 caracteres';
+    }
+
+    return false;
+  }
+
+  public errorValidProfissao(): String | boolean {
+    if (this.profissao.invalid) {
+      return 'A profissão deve ter entre 5 e 30 caracteres';
     }
 
     return false;

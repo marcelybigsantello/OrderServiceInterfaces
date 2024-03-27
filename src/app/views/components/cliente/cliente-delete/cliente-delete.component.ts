@@ -26,7 +26,9 @@ export class ClienteDeleteComponent implements OnInit {
   cliente: Cliente = {
     nome: '',
     cpf: '',
-    telefone: ''
+    telefone: '',
+    dataNascimento: new Date(),
+    profissao: '',
   };
 
   ngOnInit(): void {

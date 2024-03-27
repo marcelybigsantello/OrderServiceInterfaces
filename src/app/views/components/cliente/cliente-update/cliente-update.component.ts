@@ -21,7 +21,9 @@ export class ClienteUpdateComponent implements OnInit {
     id: '',
     nome: '',
     cpf: '',
-    telefone: ''
+    telefone: '', 
+    dataNascimento: new Date(),
+    profissao: ''
   };
 
   nome = new FormControl('', [Validators.minLength(5)]);
