@@ -26,7 +26,7 @@
 
     <mat-form-field class="full-width">
         <mat-label>Profissão: </mat-label>
-        <input [(ngModel)]="cliente.profissao" [formControl]="profissao" matInput name="profissao" maxlength="15" required>
+        <input [(ngModel)]="cliente.profissao" [formControl]="profissao" matInput name="profissao" maxlength="100" required>
         <mat-error *ngIf="profissao.invalid">{{ errorValidProfissao() }}</mat-error>
     </mat-form-field>
 
